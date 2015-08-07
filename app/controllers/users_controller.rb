@@ -1,3 +1,5 @@
+require 'rqrcode_png'
+
 class UsersController < ApplicationController
 
   def create
@@ -12,6 +14,11 @@ class UsersController < ApplicationController
         user.code_id        = code.id
 
         if user.save
+
+          qr = RQRCode::QRCode.new("#{code.code}-#{user.identification}", :size => 4, :level => :h )
+          png = qr.to_img
+          png.resize(90, 90).save("#{code.code}.png")
+
           UserMailer.welcome_email(user).deliver_later
           redirect_to root_path, notice: 'El usuario se ha creado con éxito.'
         else
