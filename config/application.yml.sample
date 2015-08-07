@@ -1,0 +1,23 @@
+default: &default
+  DOMAIN: 'localhost'
+  PORT: '3000'
+  DATABASE_PASSWORD: 'user'
+  DATABASE_USER: 'pass'
+
+  SMTP_USER_NAME: 'user'
+  SMTP_USER_PASSWORD: 'pass'
+
+development:
+  <<: *default
+  SECRET_KEY_BASE:
+
+test:
+  <<: *default
+  SECRET_KEY_BASE:
+
+production:
+  SMTP_USER_NAME: 'user'
+  SMTP_USER_PASSWORD: 'pass'
+
+  SECRET_KEY_BASE: 'key'
+  DOMAIN: 'zonaetbmoviles.com'

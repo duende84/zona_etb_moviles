@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  pool: 5
+
+development:
+  <<: *default
+  database: zona_etb_moviles_development
+
+test:
+  <<: *default
+  database: zona_etb_moviles_test
+
+production:
+  <<: *default
+  database: <%= ENV['ZONA_ETB_MOVILES_DATABASE'] %>
+  username: <%= ENV['ZONA_ETB_MOVILES_USER'] %>
+  password: <%= ENV['ZONA_ETB_MOVILES_PASSWORD'] %>
