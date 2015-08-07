@@ -24,4 +24,5 @@ production:
   SMTP_USER_PASSWORD: 'pass'
   SMTP_SERVER: 'smtp.sendgrid.net'
   SMTP_DOMAIN: 'heroku.com'
+  CLOUDINARY_URL: 'cloudinary://api_key:api_secret@cloud_name'
   SECRET_KEY_BASE: 'key'

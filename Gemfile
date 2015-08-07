@@ -19,5 +19,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'annotate'
 
 gem 'rqrcode_png', '~> 0.1.5'
+gem 'cloudinary'
 
 gem 'rails_12factor', group: :production

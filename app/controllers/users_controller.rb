@@ -6,30 +6,34 @@ class UsersController < ApplicationController
     code = Code.where(code: user_params[:code]).first
     if code.present?
       if User.where(code_id: code.id).first.present? == false
-        user = User.new
-        user.name           = user_params[:name]
-        user.identification = user_params[:identification]
-        user.email          = user_params[:email]
-        user.phone          = user_params[:phone]
-        user.code_id        = code.id
+        @user = User.new
+        @user.name           = user_params[:name]
+        @user.identification = user_params[:identification]
+        @user.email          = user_params[:email]
+        @user.phone          = user_params[:phone]
+        @user.code_id        = code.id
 
-        if user.save
+        if @user.save
+          name = "#{code.code}-#{@user.identification}"
+          qr = RQRCode::QRCode.new(name, :size => 4, :level => :h )
+          qr_img = qr.to_img.resize(150, 150).save("public/#{name}.png")
 
-          qr = RQRCode::QRCode.new("#{code.code}-#{user.identification}", :size => 4, :level => :h )
-          png = qr.to_img
-          png.resize(90, 90).save("#{code.code}.png")
+          cloud_img = Cloudinary::Uploader.upload(File.open(qr_img), :public_id => name)['url']
 
-          UserMailer.welcome_email(user).deliver_later
-          redirect_to root_path, notice: 'El usuario se ha creado con éxito.'
+          UserMailer.welcome_email(@user, cloud_img).deliver_later
+
+          msg = 'El usuario se ha creado con éxito.'
         else
-          redirect_to root_path, notice: 'El usuario no se ha creado.'
+          msg = 'El usuario no se ha creado.'
         end
       else
-        redirect_to root_path, notice: 'El código ya ha sido activado.'
+        msg = 'El código ya ha sido activado.'
       end
     else
-      redirect_to root_path, notice: 'El código que ingresate no es valido.'
+      msg = 'El código que ingresate no es valido.'
     end
+
+    redirect_to root_path, notice: msg
   end
 
   private

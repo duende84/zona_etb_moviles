@@ -12,3 +12,5 @@
 !/log/.keep
 /tmp
 config/application.yml
+config/cloudinary.yml
+.DS_Store
