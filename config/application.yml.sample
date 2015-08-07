@@ -3,7 +3,7 @@ default: &default
   PORT: '3000'
   DATABASE_PASSWORD: 'user'
   DATABASE_USER: 'pass'
-
+  SMTP_DEFAUL_FROM: 'user'
   SMTP_USER_NAME: 'user'
   SMTP_USER_PASSWORD: 'pass'
 
@@ -16,8 +16,8 @@ test:
   SECRET_KEY_BASE:
 
 production:
+  DOMAIN: 'zonaetbmoviles.com'
+  SMTP_DEFAUL_FROM: 'andreselduende@gmail.com'
   SMTP_USER_NAME: 'user'
   SMTP_USER_PASSWORD: 'pass'
-
   SECRET_KEY_BASE: 'key'
-  DOMAIN: 'zonaetbmoviles.com'
