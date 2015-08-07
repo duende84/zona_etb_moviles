@@ -6,6 +6,8 @@ default: &default
   SMTP_DEFAUL_FROM: 'user'
   SMTP_USER_NAME: 'user'
   SMTP_USER_PASSWORD: 'pass'
+  SMTP_SERVER: 'smtp.gmail.com'
+  SMTP_DOMAIN: 'localhost'
 
 development:
   <<: *default
@@ -17,7 +19,9 @@ test:
 
 production:
   DOMAIN: 'zonaetbmoviles.com'
-  SMTP_DEFAUL_FROM: 'andreselduende@gmail.com'
+  SMTP_DEFAUL_FROM: 'user@mail.com'
   SMTP_USER_NAME: 'user'
   SMTP_USER_PASSWORD: 'pass'
+  SMTP_SERVER: 'smtp.sendgrid.net'
+  SMTP_DOMAIN: 'heroku.com'
   SECRET_KEY_BASE: 'key'
