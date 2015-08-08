@@ -1,26 +1,35 @@
-= content_for :title, "Regístrate"
+.col-md-9.col-md-offset-2
+  .row
+    = image_tag 'titulo_formulario.png', class: 'title'
+  .row
+    = image_tag 'registrate.png', class: 'register'
+    .col-md-12.text-center
+      = form_for @user do |f|
+        .form-group
+          .form_item.col-md-3= f.label :name, "Nombre:"
+          .form_item.col-md-9= f.text_field :name, class: "txt_form", required: true
 
-= form_for @user, html: { class: "user-form" } do |f|
-  .form-inline.form-group
-    .col-xs-4= f.label :name, "Nombre:"
-    = f.text_field :name, class: "form-control", required: true
+        .form-group
+          .form_item.col-md-3= f.label :identification, "Cedula:"
+          .form_item.col-md-9= f.text_field :identification, class: "txt_form", required: true
 
-  .form-inline.form-group
-    .col-xs-4= f.label :identification, "Cedula:"
-    = f.text_field :identification, class: "form-control", required: true
+        .form-group
+          .form_item.col-md-3= f.label :email, "Email:"
+          .form_item.col-md-9= f.email_field :email, class: "txt_form", required: true
 
-  .form-inline.form-group
-    .col-xs-4= f.label :email, "Email:"
-    = f.email_field :email, class: "form-control", required: true
+        .form-group
+          .form_item.col-md-3= f.label :phone, "Telefono:"
+          .form_item.col-md-9= f.text_field :phone, class: "txt_form", required: true
 
-  .form-inline.form-group
-    .col-xs-4= f.label :phone, "Telefono:"
-    = f.text_field :phone, class: "form-control", required: true
+        .form-group
+          .form_item.col-md-3= f.label :code, "Código:"
+          .form_item.col-md-9= f.text_field :code, class: "txt_form", required: true
 
-  .form-inline.form-group
-    .col-xs-4= f.label :code, "Código:"
-    = f.text_field :code, class: "form-control", required: true
-
-  .form-inline.form-group.text-center
-    .col-xs-4.col-xs-offset-1
-      = f.submit "Enviar", class: "btn btn-primary"
+        .form-group.text-center
+          .col-md-6
+            .checkbox.lbl_checkbox
+              %input{:type => "checkbox"} Acepto los términos y condiciones de la actividad
+          .col-md-6
+            = image_submit_tag "enviar.png", :class => 'send'
+  .row.text-center
+    = image_tag 'preparate.png', class: 'prepare'
