@@ -1,10 +1,12 @@
 .row
   .logo.col-md-5= image_tag 'logo.png'
-  .col-md-7.text-center{ :style => "top: 50px;" }
-    .nav_button.col-md-6= image_tag 'inicio.png'
-    .nav_button.col-md-6= image_tag 'mecanica.png'
+  .col-md-7.text-center{ :style => "top: 50px; display: inline-block;" }
+    #btn_inicio.nav_button.col-md-6= image_tag 'inicio.png'
+    #btn_mecanica.nav_button.col-md-6= image_tag 'mecanica.png'
 .row
+  #iconos.row
+    .img_change.col-md-10.col-md-offset-2.text-center= image_tag 'iconos.png'
+  #lista.row
+    .img_change.col-md-10.col-md-offset-2.text-center= image_tag 'lista.png'
   .row
-    .iconos.col-md-10.col-md-offset-2.text-center= image_tag 'iconos.png'
-  .row
-    .col-md-10.col-md-offset-2.text-center{ :style => "top: 40px;" }= image_tag 'zona_etb_barra.png'
+    .img_barra.col-md-10.col-md-offset-2.text-center= image_tag 'zona_etb_barra.png'

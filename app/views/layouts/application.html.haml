@@ -21,9 +21,9 @@
   %body
     = render 'layouts/messages'
     #content
-      #left_container.col.col-md-6
+      #left_container.col-md-6.col-sm-12
         = yield
-      #right_container.col.col-md-6
+      #right_container.col-md-6.col-sm-12
         = render 'user/new'
     #footer
       #rock_logo= image_tag 'logo_rock_parque.png'

@@ -38,6 +38,7 @@
 
 .lbl_checkbox {
   font-size: 14px;
+  left: 20px;
 }
 
 .send {
@@ -48,5 +49,6 @@
 .prepare {
   margin-top: 30px;
   position: relative;
-  width: 600px;
+  max-width: 600px;
+  width: 100%;
 }

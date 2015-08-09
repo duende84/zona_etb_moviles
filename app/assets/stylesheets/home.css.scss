@@ -11,15 +11,8 @@ html,body {
   font-size: 18px;
 }
 
-body {
-  background-image: image-url("background.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-
 img {
-  height: 100%;
-  width: 80%;
+  width: 100%;
 }
 
 .alert {
@@ -29,24 +22,27 @@ img {
 }
 
 #content {
-  margin-left: 0;
-  margin-right: 0;
+  position: absolute;
   width: 100%;
-  height: 100%;
-}
-
-.col {
-  height: 100%;
+  height: 110%;
+  background-image: image-url("background.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 #left_container {
-  padding-top: 30px;
-  padding-left: 30px;
+  position: relative;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding-top: 0;
+  padding-left: 0;
   padding-right: 0;
 }
 
-.logo img {
-  width: 100%;
+.logo {
+  padding-left: 30px;
+  width: 40%;
 }
 
 .nav_button {
@@ -54,22 +50,37 @@ img {
   width: 50%;
 }
 
-.nav_button img {
-  width: 100%;
+.img_change {
+  left: 15px;
+  position: relative;
+  width: 70%
 }
 
-.iconos {
+.img_barra {
   position: relative;
-  height: 350px;
+  padding-bottom: 150px;
+  max-width: 800px;
+  width: 70%;
+  top: 30px;
+  left: 15px;
+}
+
+#lista {
+  display: none;
 }
 
 #right_container {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  height: 100%;
   padding-top: 30px;
   padding-left: 0;
   padding-right: 0;
   background-image: image-url("fotografia.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-position:center;
+  background-size: 100% 100%;
 }
 
 #footer {
@@ -88,6 +99,10 @@ img {
   min-width: 100px;
 }
 
+#rock_logo img {
+  width: 70%;
+}
+
 #etb_logo {
   position: absolute;
   bottom: 65px;
@@ -96,18 +111,11 @@ img {
   min-width: 100px;
 }
 
-#etb_logo img {
-  width: 100%;
-}
-
 #terminos {
   position: absolute;
   padding-right: 30px;
   bottom: 20px;
   right: 0;
-  width: 800px;
-}
-
-#terminos img {
-  width: 100%;
+  width: 50%;
+  min-width: 600px;
 }
