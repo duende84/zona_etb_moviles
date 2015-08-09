@@ -12,3 +12,9 @@ $ ->
     $('#iconos').hide('slow')
     $('#lista').show('slow')
     return
+
+  $('#new_user').submit ->
+    $.loader
+      className: 'load'
+      content: ''
+    return
