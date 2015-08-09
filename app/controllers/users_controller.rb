@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
           cloud_img = Cloudinary::Uploader.upload(File.open(qr_img), :public_id => name)['url']
 
-          UserMailer.welcome_email(@user, cloud_img).deliver_later
+          UserMailer.welcome_email(@user, cloud_img, code).deliver_later
 
           msg = 'El usuario se ha creado con éxito.'
         else
