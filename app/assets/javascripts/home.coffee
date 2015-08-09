@@ -13,8 +13,20 @@ $ ->
     $('#lista').show('slow')
     return
 
-  $('#new_user').submit ->
-    $.loader
-      className: 'load'
-      content: ''
+  $('#new_user').submit (e) ->
+    if !$('#check_terms').is(':checked')
+      alert 'Debes aceptar los términos y condiciones.'
+      e.preventDefault()
+    else
+      $.loader
+        className: 'load'
+        content: ''
+    return
+
+  $('#terminos').click ->
+    $('#terms').show('slow')
+    return
+
+  $('#terms').click ->
+    $('#terms').hide('slow')
     return
