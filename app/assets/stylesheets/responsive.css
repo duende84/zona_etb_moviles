@@ -1,0 +1,28 @@
+@media (max-width: 991px) {
+  #content {
+    display: none;
+  }
+
+  #terms {
+    background-color: '#ffffff';
+  }
+
+  #terms img {
+    width: 90%;
+    height: 90%;
+  }
+}
+
+@media (max-width: 640px) {
+  #term1 {
+    display: none;
+  }
+
+  #term2 {
+    display: inline-block;
+  }
+
+  #term2 img{
+    width: 50%;
+  }
+}

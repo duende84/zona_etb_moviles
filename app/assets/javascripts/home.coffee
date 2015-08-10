@@ -23,7 +23,11 @@ $ ->
         content: ''
     return
 
-  $('#terminos').click ->
+  $('#term1').click ->
+    $('#terms').show('slow')
+    return
+
+  $('#term2').click ->
     $('#terms').show('slow')
     return
 
