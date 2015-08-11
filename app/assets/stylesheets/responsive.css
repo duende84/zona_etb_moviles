@@ -1,28 +1,97 @@
 @media (max-width: 991px) {
   #content {
-    display: none;
+    height: 100%;
+    width: 100%;
   }
 
-  #terms {
-    background-color: '#ffffff';
+  .row {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   #terms img {
     width: 90%;
-    height: 90%;
+    height: 600px;
+  }
+
+  #right_container {
+    margin-top: 150px;
+  }
+
+  #nav_buttons {
+    top: 10px;
+  }
+
+  .nav_button img{
+    width: 70%;
+  }
+
+  #left_container_main {
+    margin-top: 50px;
+  }
+
+  .img_change {
+    left: 5%;
+    width: 90%;
+  }
+
+  .img_change img {
+    height: 60%;
+  }
+
+  .img_barra {
+    width: 80%;
+    left: 10%;
+  }
+
+  #right_container {
+    margin-top: 60%;
+    margin-bottom: 20%;
+  }
+
+  .new_user {
+    padding-right: 0 !important;
+  }
+
+  .form_item label {
+    display: none;
+  }
+
+  ::-webkit-input-placeholder { color:#ccc; }
+  ::-moz-placeholder { color:#ccc; } /* firefox 19+ */
+  :-ms-input-placeholder { color:#ccc; } /* ie */
+  input:-moz-placeholder { color:#ccc; }
+
+  .prepare {
+    margin-top: 70px !important;
+    max-width: 400px;
+  }
+
+  #term1 {
+    left: 20%;
+    width: 60%;
+  }
+
+  #rock_logo {
+    left: 20px;
   }
 }
 
 @media (max-width: 640px) {
+  #right_container {
+    margin-top: 0;
+    margin-bottom: 40%;
+  }
+
+  .register {
+    left: 50% !important;
+  }
+
   #term1 {
     display: none;
   }
 
   #term2 {
     display: inline-block;
-  }
-
-  #term2 img{
-    width: 50%;
   }
 }

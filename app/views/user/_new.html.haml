@@ -7,23 +7,23 @@
       = form_for @user do |f|
         .form-group
           .form_item.col-md-3= f.label :name, "Nombre:"
-          .form_item.col-md-9= f.text_field :name, class: "txt_form", required: true
+          .form_item.col-md-9= f.text_field :name, class: "txt_form", required: true, placeholder: "Nombre"
 
         .form-group
           .form_item.col-md-3= f.label :identification, "Cedula:"
-          .form_item.col-md-9= f.text_field :identification, class: "txt_form", required: true
+          .form_item.col-md-9= f.text_field :identification, class: "txt_form", required: true, placeholder: "Cedula"
 
         .form-group
           .form_item.col-md-3= f.label :email, "Email:"
-          .form_item.col-md-9= f.email_field :email, class: "txt_form", required: true
+          .form_item.col-md-9= f.email_field :email, class: "txt_form", required: true, placeholder: "Email"
 
         .form-group
           .form_item.col-md-3= f.label :phone, "Telefono:"
-          .form_item.col-md-9= f.text_field :phone, class: "txt_form", required: true
+          .form_item.col-md-9= f.text_field :phone, class: "txt_form", required: true, placeholder: "Telefono"
 
         .form-group
           .form_item.col-md-3= f.label :code, "Código:"
-          .form_item.col-md-9= f.text_field :code, class: "txt_form", required: true
+          .form_item.col-md-9= f.text_field :code, class: "txt_form", required: true, placeholder: "Código"
 
         .form-group.text-center
           .col-md-6
