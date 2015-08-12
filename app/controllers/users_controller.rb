@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
           UserMailer.welcome_email(@user, cloud_img, code).deliver_later
 
-          msg = 'El usuario se ha creado con éxito.'
+          msg = 'Ya estas inscrito para Zona ETB Móviles.'
         else
           msg = 'El usuario no se ha creado.'
         end
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
         msg = 'El código ya ha sido activado.'
       end
     else
-      msg = 'El código que ingresate no es valido.'
+      msg = 'El código que ingresate no es válido.'
     end
 
     redirect_to root_path, notice: msg
