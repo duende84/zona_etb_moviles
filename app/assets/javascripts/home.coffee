@@ -20,7 +20,8 @@ $ ->
     else
       $.loader
         className: 'load'
-        content: ''
+        content: ''  
+    $('#social_share').show('slow')
     return
 
   $('#term1').click ->

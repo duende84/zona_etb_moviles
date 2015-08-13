@@ -20,7 +20,9 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   %body
     = render 'layouts/messages'
-    #terms
+    #social_share.popup
+      = render 'home/social_share'
+    #terms.popup
       = render 'home/terms'
     #content
       #left_container.col-md-6.col-sm-12
