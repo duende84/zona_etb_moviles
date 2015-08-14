@@ -13,6 +13,17 @@ $ ->
     $('#lista').show('slow')
     return
 
+  $('#new_user').on 'ajax:success', (e, data, status) ->
+    console.error('-----------   e   ', e)
+    $.loader('close')
+    $('#social_share').show('slow')
+    return
+
+  $('#new_user').on 'ajax:error', (e, data, status) ->
+    console.error('-----------   data   ', data)
+    $.loader('close')
+    return
+
   $('#new_user').submit (e) ->
     if !$('#check_terms').is(':checked')
       alert 'Debes aceptar los términos y condiciones.'
@@ -20,8 +31,7 @@ $ ->
     else
       $.loader
         className: 'load'
-        content: ''  
-    $('#social_share').show('slow')
+        content: ''
     return
 
   $('#term1').click ->
@@ -34,4 +44,8 @@ $ ->
 
   $('#terms').click ->
     $('#terms').hide('slow')
+    return
+
+  $('#social_share').click ->
+    $('#social_share').hide('slow')
     return

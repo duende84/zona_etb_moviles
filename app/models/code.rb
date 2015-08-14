@@ -10,6 +10,9 @@
 
 class Code < ActiveRecord::Base
 
+  # -- associations --
+  belongs_to :user, foreign_key: 'id'
+
   # -- validations --
   validates :code, presence: true, uniqueness: { case_sensitive: false }
 end

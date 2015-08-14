@@ -15,7 +15,7 @@
 class User < ActiveRecord::Base
 
   # -- associations --
-  has_one :code
+  has_one :code, foreign_key: 'id'
 
   # -- validations --
   validates :name           , presence: true

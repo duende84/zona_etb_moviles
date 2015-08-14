@@ -4,7 +4,7 @@
   .row
     = image_tag 'registrate.png', class: 'register'
     .col-md-12.text-center
-      = form_for @user do |f|
+      = form_for @user, remote: true do |f|
         .form-group
           .form_item.col-md-3= f.label :name, "Nombre:"
           .form_item.col-md-9= f.text_field :name, class: "txt_form", required: true, placeholder: "Nombre"
